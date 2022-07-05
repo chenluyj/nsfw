@@ -5,7 +5,7 @@ import sys
 
 import numpy as np
 from PIL import Image
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 _MODEL_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data/models/1547856517')
@@ -52,8 +52,9 @@ if __name__ == '__main__':
     if(len(argv) < 2):
         print("usage: python nsfw_predict <image_path>")
     image_path = argv[1]
-    print()
-    res = predict(image_path)
-    print(res)
+    for i in range(1,100):
+        print()
+        res = predict(image_path)
+        print(res)
 
 

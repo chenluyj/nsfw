@@ -5,7 +5,7 @@ import json
 import requests
 
 _IMAGE_SIZE = 64
-SERVER_URL = 'http://localhost:8601/v1/models/nsfw:predict'
+SERVER_URL = 'http://localhost:8501/v1/models/nsfw:predict'
 _LABEL_MAP = {0:'drawings', 1:'hentai', 2:'neutral', 3:'porn', 4:'sexy'}
 
 from PIL import Image
@@ -44,6 +44,8 @@ if __name__ == '__main__':
     args = sys.argv
     if len(args) < 2:
         print("usage: python serving_client.py <image_path>")
+    image_path = args[1]
+    print(image_path) 
     image_data = load_image(image_path)
     predict = nsfw_predict(image_data)
     print(predict)
