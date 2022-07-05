@@ -52,9 +52,8 @@ if __name__ == '__main__':
     if(len(argv) < 2):
         print("usage: python nsfw_predict <image_path>")
     image_path = argv[1]
-    for i in range(1,100):
-        print()
-        res = predict(image_path)
-        print(res)
+    print()
+    res = predict(image_path)
+    print(res)
 
 

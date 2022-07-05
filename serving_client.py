@@ -3,6 +3,7 @@
 import sys
 import json
 import requests
+from io import BytesIO
 
 _IMAGE_SIZE = 64
 SERVER_URL = 'http://localhost:8501/v1/models/nsfw:predict'
@@ -20,7 +21,13 @@ def standardize(img):
 
 
 def load_image(image_path):
-    img = Image.open(image_path)
+    prefix = image_path[:4]
+    img = None
+    if 'http' == prefix:
+        response = requests.get(image_path)
+        img = Image.open(BytesIO(response.content))
+    else:
+        img = Image.open(image_path)
     img = img.resize((_IMAGE_SIZE, _IMAGE_SIZE))
     img.load()
     data = np.asarray(img, dtype="float32")
