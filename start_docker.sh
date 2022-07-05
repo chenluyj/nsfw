@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#docker pull tensorflow/serving
+docker pull tensorflow/serving
 MODEL_NAME=nsfw
 MODEL_BASE_PATH=`pwd`/data/models/$MODEL_NAME
 docker run -t --rm -p 8501:8501 \
