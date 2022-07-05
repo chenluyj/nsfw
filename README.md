@@ -1,3 +1,14 @@
+#使用手册
+```bash
+sh ./start_docker.sh
+```
+
+```bash
+python nsfw_predict.py /tmp/test/test.jpeg
+```
+
+
+----
 # NSFW Model
 
 This repo contains code for running Not Suitable for Work (NSFW) classification.
