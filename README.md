@@ -1,11 +1,26 @@
 #使用手册
+
+##编辑.env
+MODEL_NAME=nsfw
+MODEL_BASE_PATH={youPath}/data/models/nsfw
+
+##docker-compose 方式启动
 ```bash
-sh ./start_docker.sh
+docker-compose up -d
+```
+##测试
+```bash
+curl -X POST -H 'Content-Type: application/json' -d '{"url":"https://qiniu.gongxueyun.com/upload/04a01ddfea80a171c152215f29212f59.jpg@wh256"}'  "http://127.0.0.1:8888/nsfw"
+```
+##停止服务
+```bash
+docker-compose stop
+```
+##删除镜像
+```bash
+docker-compose rm
 ```
 
-```bash
-python nsfw_predict.py /tmp/test/test.jpeg
-```
 
 
 ----
