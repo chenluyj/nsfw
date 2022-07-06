@@ -1,2 +1,2 @@
-tensorflow==1.14
+tensorflow
 requests
