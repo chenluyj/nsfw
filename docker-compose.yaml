@@ -1,0 +1,20 @@
+version: "3.2"
+services:
+  nsfwweb:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    depends_on:
+      - nsfw
+    links:
+      - nsfw
+  nsfw:
+    image: tensorflow/serving
+    environment:
+      - MODEL_NAME=nsfw
+    volumes:
+      - type: bind
+        source: "./data/models/nsfw"
+        target: "/models/nsfw"
