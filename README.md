@@ -1,8 +1,11 @@
 #使用手册
 
 ##编辑.env
+```bash
 MODEL_NAME=nsfw
 MODEL_BASE_PATH={youPath}/data/models/nsfw
+```
+
 
 ##docker-compose 方式启动
 ```bash
