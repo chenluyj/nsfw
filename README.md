@@ -72,7 +72,7 @@ train a new model
 1. convert source to tfrecord user ```convert_image_to_tfrecord.py```
 2. train a model from scratch or fine tune
 
-the model code copy from [Tensorflow offical model](https://github.com/tensorflow/models/tree/master/official/resnet)
+the model code copy from [Tensorflow offical model](https://github.com/tensorflow/models/tree/v1.12.0/official/resnet)
 
 
 ## Data
